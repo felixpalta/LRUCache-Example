@@ -8,6 +8,9 @@ add_library(muhlib "lib.cpp")
 add_executable(${PROJECT_NAME} "main.cpp")
 add_executable(tests_default tests_default.cpp)
 
+target_include_directories(${PROJECT_NAME} PRIVATE .)
+target_include_directories(tests_default PRIVATE .)
+
 set_target_properties(${PROJECT_NAME} muhlib tests_default PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
